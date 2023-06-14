@@ -1,0 +1,28 @@
+{
+  "schema": "1.0",
+  "type": "whmcs-notifications",
+  "name": "discord",
+  "license": "proprietary",
+  "category": "notifications",
+  "description": {
+    "name": "Discord",
+    "tagline": "Send notifications to your Discord Server.",
+    "long": "Get real-time notifications directly via Discord.\n\nCreate powerful event driven notification rules that help keep you and your team in the loop using a wide range of event triggers and conditional criteria.",
+    "features": [
+      "Event driven notifications",
+      "Direct into a Discord Channel"
+    ]
+  },
+  "logo": {
+    "filename": "logo.png"
+  },
+  "support": {
+    "docs_url": "https:\/\/docs.whmcs.com\/Notifications"
+  },
+  "authors": [
+    {
+      "name": "William Beacroft",
+      "homepage": "https:\/\/billyab.co.uk\/"
+    }
+  ]
+}

@@ -17,18 +17,8 @@ use WHMCS\Notification\Contracts\NotificationInterface;
 use WHMCS\Config\Setting;
 use WHMCS\Exception;
 
-// use AdminLang;
-// use WHMCS\Mail\Template;
-// use WHMCS\Utility\Environment\WebHelper;
-// use WHMCS\Validate;
-
-
 /**
  * Notification module for delivering notifications via Discord
- *
- * All notification modules must implement NotificationModuleInterface
- *
- * @copyright Copyright (c) BBJT
  */
 class Discord implements NotificationModuleInterface
 {
@@ -45,10 +35,6 @@ class Discord implements NotificationModuleInterface
 
     /**
      * Settings required for module configuration
-     *
-     * This is used to build a form in the UI.  The values submitted by the
-     * admin based on the form will be validated prior to save.
-     * @see testConnection()
      *
      * @return array
      */
@@ -134,28 +120,6 @@ class Discord implements NotificationModuleInterface
     
     /**
      * The option values available for a 'dynamic' Type notification setting
-     *
-     * @see notificationSettings()
-     *
-     * EX.
-     * if ($fieldName == 'channel') {
-     *     return [ 'values' => [
-     *         ['id' => 1, 'name' => 'Tech Support', 'description' => 'Channel ID',],
-     *         ['id' => 2, 'name' => 'Customer Service', 'description' => 'Channel ID',],
-     *     ],];
-     * } elseif ($fieldName == 'botname') {
-     *     $restClient = $this->factoryHttpClient($settings);
-     *     $operators = $restClient->get('/operators');
-     *     return ['values' => $operators->toArray()];
-     * }
-     *
-     * For the Email notification module, a list of possible email templates is
-     * aggregated.
-     *
-     * @param string $fieldName Notification setting field name
-     * @param array $settings Settings for the module
-     *
-     * @return array
      */
     public function getDynamicField($fieldName, $settings)
     {

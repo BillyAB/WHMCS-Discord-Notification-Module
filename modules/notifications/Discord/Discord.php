@@ -115,6 +115,11 @@ class Discord implements NotificationModuleInterface
                 'Description' => 'Override the side line colour for the message. The color code format within this script is standard hex. Exclude the beginning # character if one is present.',
                 'Placeholder' => '73CB0B',
             ],
+            'discordGroupID' => [
+                'FriendlyName' => 'Notification Role ID (Optional)',
+                'Type' => 'text',
+                'Description' => 'If you\'d like to have a specific group pinged for this message type, please place the ID here (this is in addition to the module setting). An example of a group ID is: 343029528563548162 (Only include the numerical ID and no other formatting)',
+            ],
         ];
     }
     
@@ -175,9 +180,12 @@ class Discord implements NotificationModuleInterface
         if ($moduleSettings["discordGroupID"]) {
             $discordGroupID = "<@&".$moduleSettings["discordGroupID"].">";
         }
+        if ($notificationSettings["discordGroupID"]) {
+            $discordGroupIDNotificationSpecific = "<@&".$notificationSettings["discordGroupID"].">";
+        }
         $discordWebHookAvatar = $moduleSettings["discordWebHookAvatar"];
 
-        $message = (new Message())->content($discordGroupID)
+        $message = (new Message())->content($discordGroupID.$discordGroupIDNotificationSpecific)
             ->username($companyName)
             ->avatarUrl($discordWebHookAvatar)
             ->embed($embed);

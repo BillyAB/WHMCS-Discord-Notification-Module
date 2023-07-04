@@ -58,6 +58,10 @@ This module integrates WHMCS with Discord by sending notifications through Disco
 - **Type**: text (Optional)
 - **Description**: Override the side line colour for the message. The color code format within this script is standard hex. Exclude the beginning # character if one is present.
 
+### Notification Role ID
+- **Type**: text (Optional)
+- **Description**: If you'd like to have a specific group pinged for this message rule, please enter the ID here (this is in addition to the module settings). Only include the numerical ID.
+
 ## Usage
 
 Once the module is installed and configured, you can set up WHMCS to send notifications based on specific events. For example, you can set it to notify you whenever a new ticket is created, an invoice is paid, etc.
